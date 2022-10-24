@@ -19,6 +19,8 @@ export default function Home({ characters }) {
             <ul className={styles.grid}>
               {characters.map((c) => (
                 <li key={c.id} className={styles.card}>
+                  <Image src={c.image} alt={c.name} width={150} height={150} />
+                  <br />
                   <h2>{c.name}</h2>
                 </li>
               ))}
