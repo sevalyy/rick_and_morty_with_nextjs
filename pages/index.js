@@ -13,13 +13,17 @@ export default function Home({ characters }) {
         </Head>
 
         <main className={styles.main}>
-          <h1 className={styles.title}>Rick and Morty's World!</h1>
+          <h1 className={styles.title}>Rick and Morty World!</h1>
           <h2>Click character to see details</h2>
 
           <div>
             <ul className={styles.grid}>
               {characters.map((c) => (
-                <Link href="/" key={c.id}>
+                <Link
+                  href="/characters/[id]"
+                  as={`/characters/${c.id}`}
+                  key={c.id}
+                >
                   <li key={c.id} className={styles.card}>
                     <Image
                       src={c.image}
@@ -42,8 +46,8 @@ export default function Home({ characters }) {
 
 export async function getStaticProps() {
   const res = await fetch("https://rickandmortyapi.com/api/character");
-  const resObj = await res.json();
-  const characters = resObj.results;
+  const resObjet = await res.json();
+  const characters = resObjet.results;
   console.log("characters", characters);
   return {
     props: {
