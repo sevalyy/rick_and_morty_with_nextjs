@@ -98,7 +98,9 @@
 .card:focus,
 .card:active {
   color: #070c12;
-  border-color: #080d11;
+  border: 3px solid #070c12;
+  box-shadow: inset 10px 10px 10px 10px #6eecca;
+  cursor: pointer;
 }
 
 .card h2 {
