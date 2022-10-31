@@ -8,23 +8,23 @@ import Select from "react-select";
 
 export default function Home({ characters }) {
   const [search, setSearch] = useState("");
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("All");
 
   const [names, setNames] = useState(null);
 
   useEffect(() => {
-    const names = characters.filter((character) =>
+    let names = characters.filter((character) =>
       character.name.toLowerCase().includes(search.toLowerCase())
     );
 
+    if (selectedOption !== "All") {
+      names = names.filter(
+        (n) => n.species.toLowerCase() === selectedOption.toLowerCase()
+      );
+    }
+
     setNames(names);
   }, [search, selectedOption, characters]);
-
-  const options = [
-    { value: "Human", label: "Human" },
-    { value: "Alien", label: "Alien" },
-    { value: "All", label: "All" },
-  ];
 
   return (
     <MasterPage>
@@ -47,11 +47,16 @@ export default function Home({ characters }) {
           <h3 style={{ display: "flex" }}>
             <span>Filter by Species: </span>
 
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={options}
-            />
+            <select
+              name="species"
+              onChange={(e) => setSelectedOption(e.target.value)}
+              value={selectedOption}
+            >
+              <option value="All">All</option>
+
+              <option value="Human">Human</option>
+              <option value="Alien">Alien</option>
+            </select>
           </h3>
 
           <div>
