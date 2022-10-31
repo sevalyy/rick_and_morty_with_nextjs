@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  flex: 1;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 8px 10px rgb(164, 163, 163);
+  margin: auto;
+  width: 60%;
+  margin-bottom: 50px;
+}
+
+.episode {
+  display: flex;
+  max-width: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+
+  width: 300px;
+  border-bottom: 2px solid #227a7a;
+}
+
+.flexChild {
+  justify-content: space-around;
+  align-content: flex-start;
+}
+
+.title {
+  text-shadow: 2px 2px 4px #82e882;
+  text-align: center;
+  font-size: 4rem;
+}
