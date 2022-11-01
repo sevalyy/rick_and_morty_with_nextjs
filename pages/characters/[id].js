@@ -25,6 +25,7 @@ function CharacterDetails({ character }) {
             <p className={styles.card}>Species: {character.species}</p>
             <p className={styles.card}> Gender: {character.gender}</p>
             <p className={styles.card}>Alive or ☠️ ??? : {character.status} </p>
+            <p className={styles.card}> Origin: {character.origin.name}</p>
 
             {/* arraydeki her elementin son iki harfini al ve yeni array yap */}
             <p className={(styles.episode, styles.card)}>
