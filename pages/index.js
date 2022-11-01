@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import MasterPage from "../components/MasterPage";
-import React, { useState, useEffect } from "react";
 import CharacterList from "../components/CharacterList";
 
 export default function Home({ characters }) {

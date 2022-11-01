@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import MasterPage from "../components/masterPage";
+import MasterPage from "../components/MasterPage";
 
 function About() {
   return (

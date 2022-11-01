@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./footer";
-import NavBar from "./navBar";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
 
 function MasterPage({ children }) {
   return (

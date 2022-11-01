@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 
 import styles from "../styles/Home.module.css";
 
+// characters come from index.js as props
+
 function CharacterList({ characters }) {
   const [search, setSearch] = useState("");
   const [selectedOption, setSelectedOption] = useState("All");
