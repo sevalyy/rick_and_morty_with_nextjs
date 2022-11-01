@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin: 10em;
-  color: rgb(217, 60, 60);
+  /* intead of this, try using jsx inside component */
+  /* color: rgb(217, 60, 60); */
   font-size: x-large;
 }
