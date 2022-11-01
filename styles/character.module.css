@@ -22,7 +22,6 @@
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
   text-align: left;
 
   width: 300px;
@@ -32,6 +31,7 @@
 .flexChild {
   justify-content: space-around;
   align-content: flex-start;
+  padding: 1.5rem;
 }
 
 .title {
