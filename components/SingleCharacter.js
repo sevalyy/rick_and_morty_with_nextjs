@@ -24,9 +24,9 @@ function SingleCharacter({ character }) {
 
           {/* arraydeki her elementin 40'dan sonraki karakterini al */}
           <p className={(styles.episode, styles.card)}>
-            Episode:
+            Episode(s):
             {character.episode.map((episo) => (
-              <span key={character.id}>{episo.slice(40)} - </span>
+              <span key={character.id}>{episo.slice(40)} ,</span>
             ))}
           </p>
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 import Image from "next/image";
 
 import { useState, useEffect } from "react";
@@ -11,23 +10,23 @@ import styles from "../styles/Home.module.css";
 
 function CharacterList({ characters }) {
   const [search, setSearch] = useState("");
-  const [selectedOption, setSelectedOption] = useState("All");
+  const [filterByOption, setFilterByOption] = useState("All");
 
-  const [names, setNames] = useState(null);
+  const [filteredCharacters, setFilteredCharacters] = useState(null);
 
   useEffect(() => {
-    let names = characters.filter((character) =>
+    let filteredCharacters = characters.filter((character) =>
       character.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    if (selectedOption !== "All") {
-      names = names.filter(
-        (n) => n.species.toLowerCase() === selectedOption.toLowerCase()
+    if (filterByOption !== "All") {
+      filteredCharacters = filteredCharacters.filter(
+        (n) => n.species.toLowerCase() === filterByOption.toLowerCase()
       );
     }
 
-    setNames(names);
-  }, [search, selectedOption, characters]);
+    setFilteredCharacters(filteredCharacters);
+  }, [search, filterByOption, characters]);
 
   return (
     <div className={styles.main}>
@@ -46,19 +45,18 @@ function CharacterList({ characters }) {
 
         <select
           name="species"
-          onChange={(e) => setSelectedOption(e.target.value)}
-          value={selectedOption}
+          value={filterByOption}
+          onChange={(e) => setFilterByOption(e.target.value)}
         >
           <option value="All">All</option>
-
           <option value="Human">Human</option>
           <option value="Alien">Alien</option>
         </select>
       </h3>
       <div>
         <ul className={styles.grid}>
-          {names &&
-            names.map((c) => (
+          {filteredCharacters &&
+            filteredCharacters.map((c) => (
               <Link
                 href="/characters/[id]"
                 as={`/characters/${c.id}`}

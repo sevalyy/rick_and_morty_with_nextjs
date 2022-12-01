@@ -8,7 +8,7 @@ function NavBar() {
     <div className={styles.navbar}>
       {" "}
       <Link href="/">Homepage</Link>
-      <Image src="/Rick_and_Morty.png" alt="RaM logo" width={250} height={50} />
+      <Image src="/Rick_and_Morty.png" alt="RaM logo" width={350} height={70} />
       <Link href="/about">About Us </Link>
     </div>
   );

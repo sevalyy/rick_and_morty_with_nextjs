@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+
 import MasterPage from "../../components/MasterPage";
 import SingleCharacter from "../../components/SingleCharacter";
 
